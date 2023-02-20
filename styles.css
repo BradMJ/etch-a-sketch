@@ -1,0 +1,12 @@
+.grid {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.column {
+    flex: 1;
+}
+
+.row {
+    border: 1px solid black;
+}
