@@ -1,12 +1,23 @@
+#container {
+    display: flex;
+    justify-content: center;
+}
+
 .grid {
     display: flex;
     box-sizing: border-box;
 }
 
 .column {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .row {
+    min-height: 20px;
+    max-height: 50px;
+    min-width: 20px;
+    max-width: 50px;
+    display: flex;
     border: 1px solid black;
 }

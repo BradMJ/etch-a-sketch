@@ -16,13 +16,15 @@ for (let c = 0; c < columns; c++) {
     for (let r = 0; r < rows; r++) {
         const row = document.createElement('div');
         row.className = 'row';
-        row.textContent = ('c') + (c + 1) + '-' + ('r') + (r + 1);
+        // Fill row div with column and row numbers
+        //row.textContent = ('c') + (c + 1) + '-' + ('r') + (r + 1);
         row.addEventListener('mouseenter', () => {
-            row.style.backgroundColor = "rgb(" + randomColor() + "," + randomColor() + "," + randomColor() + ")";
+            row.style.backgroundColor = "black";
         });
-        row.addEventListener('mouseleave', () => {
-            row.style.backgroundColor = null;
-        });
+        // Remove background color
+        // row.addEventListener('mouseleave', () => {
+        //     row.style.backgroundColor = null;
+        // });
         column.appendChild(row);
     }
     grid.appendChild(column);
