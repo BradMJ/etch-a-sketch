@@ -1,32 +1,20 @@
-const columns = 16;
-const rows = 16;
-
 const container = document.getElementById('container');
-const createDiv = document.createElement('div');
 
 function randomColor() {
     return Math.floor(Math.random() * 256);
 }
 
-const grid = document.createElement('div');
-grid.className = 'grid';
-for (let c = 0; c < columns; c++) {
-    const column = document.createElement('div');
-    column.className = 'column';
-    for (let r = 0; r < rows; r++) {
-        const row = document.createElement('div');
-        row.className = 'row';
-        // Fill row div with column and row numbers
-        //row.textContent = ('c') + (c + 1) + '-' + ('r') + (r + 1);
-        row.addEventListener('mouseenter', () => {
-            row.style.backgroundColor = "black";
-        });
-        // Remove background color
-        // row.addEventListener('mouseleave', () => {
-        //     row.style.backgroundColor = null;
-        // });
-        column.appendChild(row);
+function populateBoard(size) {
+    const board = document.getElementById('board');
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for (let i = 0; i < 256; i++) {
+        let square = document.createElement('div');
+        square.style.background = 'blue';
+        board.insertAdjacentElement('beforeend', square);
     }
-    grid.appendChild(column);
 }
-container.appendChild(grid);
+
+populateBoard(16);
+
