@@ -12,14 +12,21 @@
             <div id="content">
                 <div id="board"></div>
                 <div id="buttons">
-                    <button id="blackButton">Black</button>
-                    <button id="whiteButton">White</button>
-                    <button id="randomColorButton">Rainbow</button>
-                    <button id="resetButton">Reset</button>
+                    <button onclick="changeColor('black')" id="blackButton">Black</button>
+                    <button onclick="changeColor('white')" id="whiteButton">Eraser</button>
+                    <button onclick="changeColor('random')" id="randomColorButton">Rainbow</button>
+                    <button onclick="resetBoard()" id="resetButton">Reset</button>
                 </div>
                 <div>
-                    <input type="text" placeholder="Size of Board" value="16" />
+                    <input type="text" 
+                    placeholder="Size of Board" 
+                    value="16" 
+                    onchange="changeBoardSize(this.value)" 
+                    />
                     <button id="gridSizeButton">Set Grid Size</button>
+                </div>
+                <div class="errorText">
+                    Input must be between 2 and 100
                 </div>
             </div>
         </div>
